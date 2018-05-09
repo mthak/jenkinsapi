@@ -129,5 +129,14 @@ class test_build(unittest.TestCase):
         self.assertEquals(self.b.get_revision_branch()[0]['name'],
                           'origin/unstable')
 
+
+    def test_git_repo_url(self):
+        """
+        Can we extract git repo url for a given build
+        """
+        self.assertIsInstance(self.b.get_repo_url(), basestring)
+        self.assertEquals(self.b.get_repo_url(), 'https://github.com/salimfadhley/jenkinsapi.git')
+
+
 if __name__ == '__main__':
     unittest.main()
